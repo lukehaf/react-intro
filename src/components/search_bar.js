@@ -8,6 +8,7 @@ class SearchBar extends Component {
   }
 
   onInputChange = (event) => {
+    this.props.onSearchChange(event.target.value);
     this.setState({ searchterm: event.target.value });
     console.log(event.target.value);
   } // arrow functions don't have their own state,
@@ -15,7 +16,7 @@ class SearchBar extends Component {
 
   render() {
     return (
-      <div>
+      <div id="search-bar">
         <input onChange={this.onInputChange} value={this.state.searchterm} />
       </div>
     );
