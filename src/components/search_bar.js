@@ -5,19 +5,18 @@ class SearchBar extends Component {
     super(props);
 
     this.state = { searchterm: '' };
-    this.onInputChange = this.onInputChange.bind(this);
   }
 
-  onInputChange(event) {
-    console.log(event.target.value);
+  onInputChange = (event) => {
     this.setState({ searchterm: event.target.value });
-  }
+    console.log(event.target.value);
+  } // arrow functions don't have their own state,
+  // so 'this' refers to the parent, the searchbar. Perfect!
 
   render() {
     return (
       <div>
         <input onChange={this.onInputChange} value={this.state.searchterm} />
-
       </div>
     );
   }
