@@ -39,3 +39,8 @@ body {
 
 }
  
+
+  .active {
+    color: pink;  //the NavLink component (for frontend url routing) adds
+    // an active class to the think you're currently on
+  }
