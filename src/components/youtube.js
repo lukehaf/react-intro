@@ -1,10 +1,7 @@
-// import $ from 'jquery';
-// change require to es6 import style
 import React, { Component } from 'react';
 import '../style.scss';
-import { connect } from 'react-redux';
-
 import debounce from 'lodash.debounce';
+import { connect } from 'react-redux';
 import SearchBar from './search_bar';
 import youtubeSearch from '../youtube-api';
 import { setVideos } from '../actions';
@@ -19,22 +16,23 @@ class YouTube extends Component {
     this.search('pixar');
   }
 
-  search = (text) => {
-    youtubeSearch(text).then((videos) => {
-      this.props.setVideos(videos);
-    });
-  };
+   search = (text) => {
+     youtubeSearch(text).then((videos) => {
+       this.props.setVideos(videos);
+     });
+   };
 
-  render() {
-    return (
-      <div>
-        <SearchBar onSearchChange={this.search} />
-        <div id="video-section">
-          <VideoDetail />
-          <VideoList />
-        </div>
-      </div>
-    );
-  }
+   render() {
+     return (
+       <div>
+         <SearchBar onSearchChange={this.search} />
+         <div id="video-section">
+           <VideoDetail />
+           <VideoList />
+         </div>
+       </div>
+
+     );
+   }
 }
 export default connect(null, { setVideos })(YouTube);

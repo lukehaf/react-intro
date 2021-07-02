@@ -10,7 +10,7 @@ const VideoReducer = (state = initialState, action) => {
     case ActionTypes.SELECT_VIDEO:
       return { selected: action.payload, list: state.list };
     case ActionTypes.SET_VIDEOS:
-      return { selected: state.selected, list: action.payload };
+      return { selected: action.payload[0], list: action.payload };
     default:
       return state;
   }

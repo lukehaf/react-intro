@@ -53,8 +53,11 @@ const App = (props) => {
           <Route exact path="/" component={Welcome} />
           <Route path="/about" component={About} />
           <Route exact path="/test/:id" component={Test} />
-          <Route component={FallBack} />
           <Route exact path="/youtube" component={YouTube} />
+
+          <Route component={FallBack} />
+          {/* never put other routes after fallback!! */}
+
         </Switch>
       </div>
     </Router>
